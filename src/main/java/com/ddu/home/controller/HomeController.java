@@ -1,5 +1,6 @@
 package com.ddu.home.controller;
 
+import com.ddu.home.dto.Board;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,4 +11,12 @@ public class HomeController {
     public String test () {
         return  "Hello World!";
     }
+    @GetMapping("/board")
+    public Board board() {
+        Board board = new Board();
+        board.setName("홍길동");
+        board.setPass("12345");
+
+        return board;
+    };
 }
